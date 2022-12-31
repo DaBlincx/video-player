@@ -56,4 +56,10 @@ video.addEventListener("timeupdate", function () {
     if (video.ended) {
         playPauseBtn.className = "fa-solid fa-play";
     }
+    if (!video.paused) {
+        playPauseBtn.className = "fa-solid fa-pause";
+    }
+    if (video.paused) {
+        playPauseBtn.className = "fa-solid fa-play";
+    }
 }, false);
