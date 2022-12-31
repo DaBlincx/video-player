@@ -1,2 +1,7 @@
 # video-player
- simple video player for websites
+
+simple video player
+
+## features
+
+will add this later
