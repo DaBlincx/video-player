@@ -4,7 +4,7 @@ var progress = document.getElementById("progress");
 var progressbg = document.getElementById("progress-bg");
 
 function togglePlayPause() {
-    if (video.paused) {
+    if (video.paused || video.ended) {
         playPauseBtn.className = "fa-solid fa-pause";
         video.play();
         console.log("play");
@@ -53,4 +53,7 @@ video.addEventListener("timeupdate", function () {
     var timepercent = video.currentTime / video.duration;
     console.log(video.currentTime, video.duration, timepercent);
     updateProgress(timepercent);
+    if (video.ended) {
+        playPauseBtn.className = "fa-solid fa-play";
+    }
 }, false);
