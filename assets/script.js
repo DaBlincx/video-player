@@ -2,6 +2,7 @@ var video = document.getElementById("video");
 var playPauseBtn = document.getElementById("play-pause");
 var progress = document.getElementById("progress");
 var progressbg = document.getElementById("progress-bg");
+var progresshover = document.getElementById("progress-hover");
 
 function togglePlayPause() {
     if (video.paused || video.ended) {
@@ -42,6 +43,16 @@ function clickUpdate(event) {
     console.log(video.duration);
     console.log(pospercent)
     console.log(video.currentTime);
+}
+
+function updateHoverBar(event) {
+    var hovpos = event.offsetX;
+    var nposperc = hovpos / progressbg.offsetWidth;
+    progresshover.style.width = nposperc * 100 + "%";
+}
+
+function rmHoverBar() {
+    progresshover.style.width = 0;
 }
 
 progressbg.addEventListener("click", function (event) {

@@ -16,9 +16,9 @@
         <video type="videp/mp4" id="video" class="p-video" src="video.mp4"></video>
 
         <div class="p-controls">
-            <div id="progress-bg" class="progress-bg">
-                <div id="progress-hover" class="progress-hover"></div>
+            <div id="progress-bg" class="progress-bg" onmousemove="updateHoverBar(event)" onmouseleave="rmHoverBar()">
                 <div id="progress" class="progress"></div>
+                <div id="progress-hover" class="progress-hover"></div>
 
             </div>
 

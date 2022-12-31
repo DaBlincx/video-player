@@ -18,6 +18,7 @@
 }
 
 .progress-bg {
+    position: relative;
     background: #888888;
     height: 5px;
     margin-top: 5px;
@@ -26,13 +27,13 @@
 }
 
 .progress-hover {
-    display: none;
     background: #aaaaaa;
     height: 100%;
     width: 0;
 }
 
 .progress {
+    position: absolute;
     background: #ff3300;
     height: 100%;
     width: 0;
