@@ -1,7 +1,7 @@
 var video = document.getElementById("video");
 var playPauseBtn = document.getElementById("play-pause");
 var progress = document.getElementById("progress");
-var progressbar = document.getElementById("progress-bar");
+var progressbg = document.getElementById("progress-bg");
 
 function togglePlayPause() {
     if (video.paused) {
@@ -24,9 +24,9 @@ function clickUpdate(event) {
     var pos = event.offsetX;
     console.log(pos);
 
-    var pospercent = pos / progressbar.offsetWidth;
+    var pospercent = pos / progressbg.offsetWidth;
 
-    console.log(progressbar.offsetWidth);
+    console.log(progressbg.offsetWidth);
     console.log("clicked at " + pospercent);
 
     updateProgress(pospercent);
@@ -36,7 +36,7 @@ function clickUpdate(event) {
 
     console.log(newtime);
 
-    video.currentTime = 200;
+    video.currentTime = newtime;
     
     
     console.log(video.duration);
@@ -44,7 +44,7 @@ function clickUpdate(event) {
     console.log(video.currentTime);
 }
 
-progressbar.addEventListener("click", function (event) {
+progressbg.addEventListener("click", function (event) {
     console.log("clicked");
     clickUpdate(event);
 }, false);
