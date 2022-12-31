@@ -53,13 +53,9 @@ video.addEventListener("timeupdate", function () {
     var timepercent = video.currentTime / video.duration;
     console.log(video.currentTime, video.duration, timepercent);
     updateProgress(timepercent);
-    if (video.ended) {
+    if (video.ended || video.paused) {
         playPauseBtn.className = "fa-solid fa-play";
-    }
-    if (!video.paused) {
+    } else {
         playPauseBtn.className = "fa-solid fa-pause";
-    }
-    if (video.paused) {
-        playPauseBtn.className = "fa-solid fa-play";
     }
 }, false);
