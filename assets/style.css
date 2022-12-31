@@ -28,6 +28,7 @@
 .progress {
     background: #ff3300;
     height: 100%;
+    width: 0;
 }
 
 #play-pause {
