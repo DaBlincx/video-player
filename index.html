@@ -6,18 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>player</title>
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <script src="https://kit.fontawesome.com/56cb8237d4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <div class="player">
-        <video id="video" class="p-video" src="video.mp4"></video>
+        <video type="videp/mp4" id="video" class="p-video" src="video.mp4"></video>
 
         <div class="p-controls">
             <div id="progress-bg" class="progress-bg">
+                <div id="progress-hover" class="progress-hover"></div>
                 <div id="progress" class="progress"></div>
+
             </div>
 
             <button class="fa-solid fa-play" id="play-pause" onclick="togglePlayPause()"></button>
@@ -29,7 +31,7 @@
         </div>
     </div>
 
-    <script src="/assets/script.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>

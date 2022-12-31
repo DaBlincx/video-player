@@ -25,6 +25,13 @@
     margin-right: 5px;
 }
 
+.progress-hover {
+    display: none;
+    background: #aaaaaa;
+    height: 100%;
+    width: 0;
+}
+
 .progress {
     background: #ff3300;
     height: 100%;
