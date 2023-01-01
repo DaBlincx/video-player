@@ -10,10 +10,8 @@ var volumebutton = document.getElementById("volume-button")
 
 function checkURLParams() {
     const queryString = window.location.search;
-    console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
     const newVideoSrc = urlParams.get('url')
-    console.log(newVideoSrc);
     return newVideoSrc;
 }
 
