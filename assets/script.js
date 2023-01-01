@@ -7,6 +7,7 @@ var videoDurationDisplay = document.getElementById("time-video-duration-display"
 var videoCurrentTimeDisplay = document.getElementById("time-video-current-time-display");
 var volumebar = document.getElementById("volume-bar");
 var volumebutton = document.getElementById("volume-button")
+var fullscreenbutton = document.getElementById("fullscreen-button")
 
 function checkURLParams() {
     const queryString = window.location.search;
@@ -95,6 +96,15 @@ function getVolClasses(volume) {
     }
 }
 
+function toggleFullScreen() {
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+    }
+}
 
 /*
 ill implement this later lol
