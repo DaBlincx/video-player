@@ -24,10 +24,27 @@ kbd {
     color: #ff3300;
 }
 
-input[type=range] {-webkit-appearance: none;width: 100%;background: transparent;} 
-input[type=range]::-webkit-slider-thumb {-webkit-appearance: none;} 
-input[type=range]:focus {outline: none;} 
-input[type=range]::-ms-track {width: 100%;cursor: pointer;background: transparent;border-color: transparent;color: transparent;}
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
 
 .player {
     height: 100%;
@@ -120,6 +137,7 @@ input[type=range]#volume-bar::-webkit-slider-thumb {
     margin-top: -3px;
     background: #ffffff;
 }
+
 input[type=range]#volume-bar::-moz-range-thumb {
     transform: translateY(-4px);
     -webkit-appearance: none;
@@ -129,6 +147,7 @@ input[type=range]#volume-bar::-moz-range-thumb {
     margin-top: -3px;
     background: #ffffff;
 }
+
 input[type=range]#volume-bar::-ms-thumb {
     -webkit-appearance: none;
     height: 15px;
@@ -144,6 +163,7 @@ input[type=range]#volume-bar::-webkit-slider-runnable-track {
     background: #bbbbbb;
     border-radius: 4px;
 }
+
 input[type=range]#volume-bar::-moz-range-track {
     transform: translateY(-4px);
     width: 100px;
@@ -151,6 +171,7 @@ input[type=range]#volume-bar::-moz-range-track {
     background: #bbbbbb;
     border-radius: 4px;
 }
+
 input[type=range]#volume-bar::-ms-track {
     width: 100px;
     height: 8px;
@@ -161,9 +182,11 @@ input[type=range]#volume-bar::-ms-track {
 input[type=range]#volume-bar:active::-webkit-slider-thumb {
     background: #aaaaaa;
 }
+
 input[type=range]#volume-bar:active::-moz-range-thumb {
     background: #aaaaaa;
 }
+
 input[type=range]#volume-bar:active::-ms-thumb {
     background: #aaaaaa;
 }
@@ -171,9 +194,11 @@ input[type=range]#volume-bar:active::-ms-thumb {
 input[type=range]#volume-bar:active::-webkit-slider-runnable-track {
     background: #888888;
 }
+
 input[type=range]#volume-bar::-moz-range-track {
     background: #888888;
 }
+
 input[type=range]#volume-bar::-ms-track {
     background: #888888;
 }
@@ -206,7 +231,7 @@ input[type=range]#volume-bar::-ms-track {
     font-size: 16px;
 }
 
-input[type=range]#volume-bar:active + #volume-bar-value {
+input[type=range]#volume-bar:active+#volume-bar-value {
     display: block;
 }
 
