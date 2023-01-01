@@ -6,6 +6,17 @@ var progresshover = document.getElementById("progress-hover");
 var videoDurationDisplay = document.getElementById("time-video-duration-display");
 var videoCurrentTimeDisplay = document.getElementById("time-video-current-time-display");
 
+function checkURLParams() {
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    const newVideoSrc = urlParams.get('url')
+    console.log(newVideoSrc);
+    return newVideoSrc;
+}
+
+video.src = checkURLParams();
+
 function togglePlayPause() {
     if (video.paused || video.ended) {
         playPauseBtn.className = "fa-solid fa-pause";
@@ -18,6 +29,7 @@ function togglePlayPause() {
 
 function updateProgress(progpercent) {
     progress.style.width = progpercent * 100 + "%";
+    videoCurrentTimeDisplay.innerText = formTimeString(video.currentTime);
 }
 
 function clickUpdate(event) {
@@ -43,15 +55,14 @@ progressbg.addEventListener("click", function (event) {
 }, false);
 
 video.addEventListener("timeupdate", function () {
-    var timepercent = video.currentTime / video.duration;
-    updateProgress(timepercent);
-    if (video.ended || video.paused) {
-        playPauseBtn.className = "fa-solid fa-play";
-    } else {
-        playPauseBtn.className = "fa-solid fa-pause";
-    }
-    videoCurrentTimeDisplay.innerText = formTimeString(video.currentTime);
+    updateProgress(video.currentTime / video.duration);
+    if (video.ended || video.paused) { playPauseBtn.className = "fa-solid fa-play"; }
+    else {playPauseBtn.className = "fa-solid fa-pause";}
 }, false);
+
+video.addEventListener("click", function () {
+    togglePlayPause()
+})
 
 function formTimeString(seconds) {
     seconds = Math.floor(seconds)
@@ -67,9 +78,17 @@ function formTimeString(seconds) {
     }
 
     if (hours > 0) {
-        return hours + ":" + minutes + ":" + seconds
+        return String(hours).padStart(2, '0') + ":" + String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0')
     } else {
-        return minutes + ":" + seconds
+        return String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0')
+    }
+}
+
+function checkBufferSize(element) {
+    for (let i = 0; i < element.buffered.length; i++) {
+        const startX = element.buffered.start(i) * inc;
+        const endX = element.buffered.end(i) * inc;
+        const width = endX - startX;
     }
 }
 
