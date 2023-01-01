@@ -41,7 +41,7 @@
 
 #play-pause {
     position: absolute;
-    left: 0%;
+    left: 4px;
     background: none;
     border: none;
     color: #ffffff;
@@ -57,22 +57,29 @@
 
 .p-volume {
     position: absolute;
-    left: 100px;
+    left: 64px;
+    bottom: 0;
+    margin-top: 8px;
     width: 25px;
+    text-align: center;
 }
 
 
 #volume-button {
+    position: absolute;
+    bottom: 12px;
     background: red;
     border: none;
     width: 20px;
     height: 20px;
     z-index: 30;
+    transform: translateX(-50%);
 }
 
-.volume-bar {
-    display: none;
-    appearance: slider-vertical;
+
+
+.p-volume:hover {
+    height: 200px;
 }
 
 .p-volume:hover .volume-bar {

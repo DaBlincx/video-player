@@ -3,7 +3,7 @@ var playPauseBtn = document.getElementById("play-pause");
 var progress = document.getElementById("progress");
 var progressbg = document.getElementById("progress-bg");
 var progresshover = document.getElementById("progress-hover");
-var volumebar = document.getElementById("volume-bar");
+/*var volumebar = document.getElementById("volume-bar");*/
 
 function togglePlayPause() {
     if (video.paused || video.ended) {
@@ -51,6 +51,6 @@ video.addEventListener("timeupdate", function () {
     }
 }, false);
 
-volumebar.addEventListener("input", function () {
+/*volumebar.addEventListener("input", function () {
     video.volume = volumebar.value;
-}, false);
+}, false);*/
