@@ -3,7 +3,8 @@ var playPauseBtn = document.getElementById("play-pause");
 var progress = document.getElementById("progress");
 var progressbg = document.getElementById("progress-bg");
 var progresshover = document.getElementById("progress-hover");
-/*var volumebar = document.getElementById("volume-bar");*/
+var videoDurationDisplay = document.getElementById("time-video-duration-display");
+var videoCurrentTimeDisplay = document.getElementById("time-video-current-time-display");
 
 function togglePlayPause() {
     if (video.paused || video.ended) {
@@ -49,7 +50,32 @@ video.addEventListener("timeupdate", function () {
     } else {
         playPauseBtn.className = "fa-solid fa-pause";
     }
+    videoCurrentTimeDisplay.innerText = formTimeString(video.currentTime);
 }, false);
+
+function formTimeString(seconds) {
+    seconds = Math.floor(seconds)
+    var hours = 0;
+    var minutes = 0;
+    while (seconds >= 60) {
+        seconds = seconds - 60;
+        minutes = minutes + 1;
+    }
+    while (minutes >= 60) {
+        minutes = minutes - 60;
+        hours = hours + 1;
+    }
+
+    if (hours > 0) {
+        return hours + ":" + minutes + ":" + seconds
+    } else {
+        return minutes + ":" + seconds
+    }
+}
+
+setTimeout(() => videoDurationDisplay.innerText = formTimeString(video.duration), 180)
+
+
 
 /*volumebar.addEventListener("input", function () {
     video.volume = volumebar.value;

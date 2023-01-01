@@ -110,3 +110,10 @@ body {
 .p-volume:hover {
     width: 140px;
 }
+
+.time-display {
+    position: absolute;
+    right: 20px;
+    color: #ffffff;
+    bottom: 12px;
+}
