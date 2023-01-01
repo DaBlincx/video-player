@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>player</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <script src="https://kit.fontawesome.com/56cb8237d4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Recources/styles/style.css">
+    <script src="https://kit.fontawesome.com/247ab887da.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <div class="player">
-        <video type="videp/mp4" id="video" class="p-video" src="video.mp4"></video>
+        <video type="videp/mp4" id="video" class="p-video" src="Recources/Videos/video.mp4"></video>
 
         <div class="p-controls">
             <div id="progress-bg" class="progress-bg" onmousemove="updateHoverBar(event)" onmouseleave="rmHoverBar()">
@@ -21,17 +21,17 @@
                 <div id="progress-hover" class="progress-hover"></div>
 
             </div>
+            
 
-            <button class="fa-solid fa-play" id="play-pause" onclick="togglePlayPause()"></button>
+            <i class="fa-solid fa-play white" id="play-pausebtn" onclick="togglePlayPause()"></i>
+            <i class="fa-solid fa-volume-up button" id="up-mute" onclick="toggleMute()"></i>
 
-            <div class="p-volume" style="display: none;">
-                <button id="mute"></button>
-                <input class="volume-bar" type="range" min="0" max="1" step="0.01" value="1">
-            </div>
+            <input class="test" type="range" min="0" max="10" value="100" id="sliderRange">
         </div>
     </div>
+    
 
-    <script src="assets/script.js"></script>
+    <script src="Recources/js/script.js"></script>
 </body>
 
 </html>
