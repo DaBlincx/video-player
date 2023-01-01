@@ -27,10 +27,57 @@
             <div class="p-volume">
 
                 <button id="volume-button" class="fa-solid fa-volume-high" onclick="toggleMute()"></button>
-                
+
                 <input id="volume-bar" class="volume-bar" type="range" min="0" max="1" step="0.01" value="1">
-                
+
+                <span id="volume-bar-value" class="volume-bar-value">100%</span>
+
             </div>
+
+            <button class="fa-solid fa-circle-info" id="kbdhelp-icon" onclick="toggleHelpMessage()"></button>
+            <div class="kbdhelp-list" id="kbdhelp-list">
+                <div class="kbdhelp-item">
+                    <span class="kbdhelp-key"></span>
+                    <span class="kbdhelp-desc">Videoplayer by <a target="_blank" class="link-highlight" href="https://github.com/DaBlincx/video-player">DaBlincx</a></span>
+                </div>
+                <div class="kbdhelp-item">
+                    <span class="kbdhelp-key"></span>
+                    <span class="kbdhelp-desc"></span>
+                </div>
+                <div class="kbdhelp-item">
+                    <span class="kbdhelp-key"></span>
+                    <span class="kbdhelp-desc">Controls:</span>
+                </div>
+                <div class="kbdhelp-item">
+                    <span class="kbdhelp-key"><kbd>Space</kbd></span>
+                    <span class="kbdhelp-desc">Play/Pause</span>
+                </div>
+                <div class="kbdhelp-item">
+                    <span class="kbdhelp-key"><kbd>←</kbd></span>
+                    <span class="kbdhelp-desc">Rewind 5 seconds</span>
+                </div>
+                <div class="kbdhelp-item">
+                    <span class="kbdhelp-key"><kbd>→</kbd></span>
+                    <span class="kbdhelp-desc">Forward 5 seconds</span>
+                </div>
+                <div class="kbdhelp-item">
+                    <span class="kbdhelp-key"><kbd>↑</kbd></span>
+                    <span class="kbdhelp-desc">Volume up</span>
+                </div>
+                <div class="kbdhelp-item">
+                    <span class="kbdhelp-key"><kbd>↓</kbd></span>
+                    <span class="kbdhelp-desc">Volume down</span>
+                </div>
+                <div class="kbdhelp-item">
+                    <span class="kbdhelp-key"><kbd>M</kbd></span>
+                    <span class="kbdhelp-desc">Mute/Unmute</span>
+                </div>
+                <div class="kbdhelp-item">
+                    <span class="kbdhelp-key"><kbd>F</kbd></span>
+                    <span class="kbdhelp-desc">Fullscreen</span>
+                </div>
+            </div>
+
             <div class="time-display">
                 <span id="time-video-current-time-display">00:00</span> / <span
                     id="time-video-duration-display">00:00</span>

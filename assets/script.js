@@ -6,8 +6,10 @@ var progresshover = document.getElementById("progress-hover");
 var videoDurationDisplay = document.getElementById("time-video-duration-display");
 var videoCurrentTimeDisplay = document.getElementById("time-video-current-time-display");
 var volumebar = document.getElementById("volume-bar");
-var volumebutton = document.getElementById("volume-button")
-var fullscreenbutton = document.getElementById("fullscreen-button")
+var volumebutton = document.getElementById("volume-button");
+var volumebarvalue = document.getElementById("volume-bar-value");
+var fullscreenbutton = document.getElementById("fullscreen-button");
+var kbdhelplist = document.getElementById("kbdhelp-list");
 
 function checkURLParams() {
     const queryString = window.location.search;
@@ -106,6 +108,44 @@ function toggleFullScreen() {
     }
 }
 
+function updateVolumeValue() {
+    volumebarvalue.innerText = Math.round(volumebar.value * 100) + "%";
+}
+
+function keypressHandler(event) {
+    if (event.key == " ") {
+        togglePlayPause()
+    } else if (event.key == "m") {
+        toggleMute()
+    } else if (event.key == "f") {
+        toggleFullScreen()
+    } else if (event.key == "ArrowLeft") {
+        video.currentTime = video.currentTime - 5;
+    } else if (event.key == "ArrowRight") {
+        video.currentTime = video.currentTime + 5;
+    } else if (event.key == "ArrowUp") {
+        video.volume = video.volume + 0.05;
+        if (!video.muted) {
+            volumebutton.className = getVolClasses(video.volume);
+        }
+        updateVolumeValue()
+    } else if (event.key == "ArrowDown") {
+        video.volume = video.volume - 0.05;
+        if (!video.muted) {
+            volumebutton.className = getVolClasses(video.volume);
+        }
+        updateVolumeValue()
+    }
+}
+
+function toggleHelpMessage() {
+    if (kbdhelplist.style.display == "block") {
+        kbdhelplist.style.display = "none";
+    } else {
+        kbdhelplist.style.display = "block";
+    }
+}
+
 /*
 ill implement this later lol
 
@@ -128,19 +168,27 @@ video.addEventListener("timeupdate", function () {
     } else {
         playPauseBtn.className = "fa-solid fa-pause";
     }
-    
+
 }, false);
 
 video.addEventListener("click", function () {
     togglePlayPause()
 })
 
-setTimeout(() => videoDurationDisplay.innerText = formTimeString(video.duration), 180)
 
+
+video.addEventListener("loadedmetadata", function () {
+    videoDurationDisplay.innerText = formTimeString(video.duration)
+}, false);
 
 volumebar.addEventListener("input", function () {
     video.volume = volumebar.value;
     if (!video.muted) {
         volumebutton.className = getVolClasses(video.volume);
     }
+    updateVolumeValue()
 }, false);
+
+document.addEventListener("keydown", function (event) {
+    keypressHandler(event);
+});
